@@ -50,7 +50,7 @@ int main(void)
     /* 系统时钟初始化成400MHz */
   
     LED_GPIO_Config();
-    LED_BLUE;	
+    LED1_ON;	
     /* 初始化USART1 配置模式为 115200 8-N-1 */
     Debug_USART_Config();	
 	/* 初始化USB */
@@ -76,7 +76,7 @@ int main(void)
 			if(res_sd != FR_OK)
 			{
 			  printf("f_mount ERROR!请给开发板插入SD卡然后重新复位开发板!");
-			  LED_RED;
+			  LED3_ON;
 			  while(1);
 			}
 #if 1    
@@ -107,14 +107,10 @@ int main(void)
 			Burn_Content();
 			/* 校验烧录的内容 */
 			Check_Resource(); 
+			LED_ALLTOGGLE;
 		}
 	}
 #endif    
-    /* 操作完成，停机 */
-    while(1)
-    {
-		USBH_Process(&USB_OTG_Core, &USB_Host);
-    }
 }
 	  
 

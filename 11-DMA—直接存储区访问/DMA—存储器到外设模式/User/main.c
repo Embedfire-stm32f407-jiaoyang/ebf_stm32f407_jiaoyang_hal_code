@@ -42,7 +42,7 @@ int main(void)
   /* 配置使用DMA模式 */
   USART_DMA_Config();
   
-  /* 配置RGB彩色灯 */
+  /* 配置灯 */
   LED_GPIO_Config();
 
   printf("\r\n USART1 DMA TX 测试 \r\n");

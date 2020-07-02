@@ -5,20 +5,23 @@
 
 //引脚定义
 /*******************************************************/
-//R 红色灯
-#define LED1_PIN                  GPIO_Pin_6                 
-#define LED1_GPIO_PORT            GPIOF                      
-#define LED1_GPIO_CLK             RCC_AHB1Periph_GPIOF
 
-//G 绿色灯
-#define LED2_PIN                  GPIO_Pin_7                 
-#define LED2_GPIO_PORT            GPIOF                      
-#define LED2_GPIO_CLK             RCC_AHB1Periph_GPIOF
+#define LED1_PIN                  GPIO_Pin_15               
+#define LED1_GPIO_PORT            GPIOA                            
+#define LED1_GPIO_CLK             RCC_AHB1Periph_GPIOA
 
-//B 蓝色灯
-#define LED3_PIN                  GPIO_Pin_8                 
-#define LED3_GPIO_PORT            GPIOF                       
-#define LED3_GPIO_CLK             RCC_AHB1Periph_GPIOF
+#define LED2_PIN                  GPIO_Pin_2                 
+#define LED2_GPIO_PORT            GPIOE                  
+#define LED2_GPIO_CLK             RCC_AHB1Periph_GPIOC
+
+#define LED3_PIN                  GPIO_Pin_15               
+#define LED3_GPIO_PORT            GPIOG                 
+#define LED3_GPIO_CLK             RCC_AHB1Periph_GPIOG
+
+#define LED4_PIN                  GPIO_Pin_8               
+#define LED4_GPIO_PORT            GPIOB    
+#define LED4_GPIO_CLK             RCC_AHB1Periph_GPIOG
+
 /************************************************************/
 
 
@@ -64,57 +67,15 @@
 #define LED3_OFF			digitalHi(LED3_GPIO_PORT,LED3_PIN)
 #define LED3_ON				digitalLo(LED3_GPIO_PORT,LED3_PIN)
 
-/* 基本混色，后面高级用法使用PWM可混出全彩颜色,且效果更好 */
+#define LED4_TOGGLE		digitalToggle(LED4_GPIO_PORT,LED4_PIN)
+#define LED4_OFF			digitalHi(LED4_GPIO_PORT,LED4_PIN)
+#define LED4_ON				digitalLo(LED4_GPIO_PORT,LED4_PIN)
 
-//红
-#define LED_RED  \
-					LED1_ON;\
-					LED2_OFF;\
-					LED3_OFF
-
-//绿
-#define LED_GREEN		\
-					LED1_OFF;\
-					LED2_ON;\
-					LED3_OFF
-
-//蓝
-#define LED_BLUE	\
-					LED1_OFF;\
-					LED2_OFF;\
-					LED3_ON
-
-					
-//黄(红+绿)					
-#define LED_YELLOW	\
-					LED1_ON;\
-					LED2_ON;\
-					LED3_OFF
-//紫(红+蓝)
-#define LED_PURPLE	\
-					LED1_ON;\
-					LED2_OFF;\
-					LED3_ON
-
-//青(绿+蓝)
-#define LED_CYAN \
-					LED1_OFF;\
-					LED2_ON;\
-					LED3_ON
-					
-//白(红+绿+蓝)
-#define LED_WHITE	\
-					LED1_ON;\
-					LED2_ON;\
-					LED3_ON
-					
-//黑(全部关闭)
-#define LED_RGBOFF	\
-					LED1_OFF;\
-					LED2_OFF;\
-					LED3_OFF		
-
-
+#define LED_ALLTOGGLE	\
+					LED1_TOGGLE;\
+					LED2_TOGGLE;\
+					LED3_TOGGLE;\
+					LED4_TOGGLE;
 
 
 void LED_GPIO_Config(void);

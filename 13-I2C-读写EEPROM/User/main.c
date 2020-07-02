@@ -51,11 +51,11 @@ int main(void)
 	
   if(I2C_Test() ==1)
   {
-      LED_GREEN;
+      LED_ALLON;
   }
   else
   {
-      LED_RED;
+      LED2_ON;
   }
 
   while (1)

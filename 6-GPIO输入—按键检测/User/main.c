@@ -40,12 +40,12 @@ int main(void)
 	{	   
 		if( Key_Scan(KEY1_GPIO_PORT,KEY1_PIN) == KEY_ON  )
 		{
-			/*LED1反转*/
+			/*LEDALL反转*/
 			LED_ALLTOGGLE;
 		}   
 		if( Key_Scan(KEY2_GPIO_PORT,KEY2_PIN) == KEY_ON  )
 		{
-			/*LED2反转*/
+			/*LED1反转*/
 			LED1_TOGGLE;
 		}
 		if( Key_Scan(KEY3_GPIO_PORT,KEY3_PIN) == KEY_ON  )
@@ -55,12 +55,12 @@ int main(void)
 		}   
 		if( Key_Scan(KEY4_GPIO_PORT,KEY4_PIN) == KEY_ON  )
 		{
-			/*LED2反转*/
+			/*LED3反转*/
 			LED3_TOGGLE;
 		}   
 		if( Key_Scan(KEY5_GPIO_PORT,KEY5_PIN) == KEY_ON  )
 		{
-			/*LED2反转*/
+			/*LED4反转*/
 			LED4_TOGGLE;
 		}   
 	}

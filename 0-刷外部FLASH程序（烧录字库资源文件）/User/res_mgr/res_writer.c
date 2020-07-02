@@ -377,13 +377,13 @@ FRESULT Burn_Content(void)
   
     BURN_INFO("-------------------------------------"); 
     BURN_INFO("准备烧录内容：%s",full_file_name);
-    LED_BLUE;
+    LED1_ON;
      
      result = f_open(&file_temp,full_file_name,FA_OPEN_EXISTING | FA_READ);
       if(result != FR_OK)
       {
           BURN_ERROR("打开文件失败！");
-          LED_RED;
+          LED3_ON;
           return result;
       }
   
@@ -398,7 +398,7 @@ FRESULT Burn_Content(void)
         if(result!=FR_OK)			 //执行错误
         {
           BURN_ERROR("读取文件失败！result = %d",result);
-          LED_RED;
+          LED3_ON;
           return result;
         }    
         if(bw == 0)break;//为0时不进行读写，跳出  
@@ -456,7 +456,7 @@ FRESULT Check_Resource(void)
     offset = GetResOffset(dir.name);
     if(offset == -1)
     {
-      LED_RED;
+      LED3_ON;
       BURN_INFO("校验失败，无法在FLASH中找到文件：%s 的目录",dir.name);
       return FR_NO_FILE;
     }
@@ -473,7 +473,7 @@ FRESULT Check_Resource(void)
       if(result != FR_OK)
       {
           BURN_ERROR("打开文件失败！");
-              LED_RED;
+              LED3_ON;
           return result;
       }
           
@@ -489,7 +489,7 @@ FRESULT Check_Resource(void)
         if(result!=FR_OK)			 //执行错误
         {
           BURN_ERROR("读取文件失败！");
-          LED_RED;
+          LED3_ON;
           return result;
         }    
 
@@ -515,7 +515,7 @@ FRESULT Check_Resource(void)
             BURN_DEBUG_ARRAY(tempbuf,bw);
             BURN_ERROR("flash_buf");
             BURN_DEBUG_ARRAY(flash_buf,bw);
-            LED_RED;
+            LED3_ON;
             return FR_INT_ERR;
           }
          }  
@@ -524,12 +524,12 @@ FRESULT Check_Resource(void)
       }      
 
       BURN_INFO("数据校验正常！");
-      LED_BLUE;
+      LED_ALLTOGGLE;
                
       f_close(&file_temp);     
   }
   
-  LED_GREEN;
+  LED_ALLTOGGLE;
   BURN_INFO("************************************");
   BURN_INFO("所有文件校验正常！（非文件系统部分）");
   return FR_OK;

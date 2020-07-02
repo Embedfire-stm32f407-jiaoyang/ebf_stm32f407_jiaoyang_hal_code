@@ -3,8 +3,8 @@
   * @file    main.c
   * @author  fire
   * @version V1.0
-  * @date    2017-xx-xx
-  * @brief   PVD监控
+  * @date    2020-xx-xx
+  * @brief   RS485通信实验
   ******************************************************************************
   * @attention
   *

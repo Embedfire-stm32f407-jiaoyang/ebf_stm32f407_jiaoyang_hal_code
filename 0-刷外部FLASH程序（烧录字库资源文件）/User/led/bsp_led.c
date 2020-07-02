@@ -59,6 +59,6 @@ void LED_GPIO_Config(void)
     GPIO_Init(LED3_GPIO_PORT, &GPIO_InitStructure);	
 		
 		/*¹Ø±ÕRGBµÆ*/
-		LED_RGBOFF;		
+		LED_ALLTOGGLE;		
 }
 /*********************************************END OF FILE**********************/
