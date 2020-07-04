@@ -29,9 +29,9 @@ void Key_GPIO_Config(void)
     /*开启按键GPIO口的时钟*/
     KEY1_GPIO_CLK_ENABLE();
     KEY2_GPIO_CLK_ENABLE();
-	KEY3_GPIO_CLK_ENABLE();
-	KEY4_GPIO_CLK_ENABLE();
-	KEY5_GPIO_CLK_ENABLE();
+		KEY3_GPIO_CLK_ENABLE();
+		KEY4_GPIO_CLK_ENABLE();
+		KEY5_GPIO_CLK_ENABLE();
     /*选择按键的引脚*/	
     GPIO_InitStructure.Pin = KEY1_PIN; 
     /*设置引脚为输入模式*/
@@ -43,11 +43,16 @@ void Key_GPIO_Config(void)
     /*选择按键的引脚*/
     GPIO_InitStructure.Pin = KEY2_PIN; 
     /*使用上面的结构体初始化按键*/
-    HAL_GPIO_Init(KEY1_GPIO_PORT, &GPIO_InitStructure);
     HAL_GPIO_Init(KEY2_GPIO_PORT, &GPIO_InitStructure);
-	HAL_GPIO_Init(KEY3_GPIO_PORT, &GPIO_InitStructure);
-	HAL_GPIO_Init(KEY4_GPIO_PORT, &GPIO_InitStructure);
-	HAL_GPIO_Init(KEY5_GPIO_PORT, &GPIO_InitStructure);
+	
+		GPIO_InitStructure.Pin = KEY3_PIN; 
+		HAL_GPIO_Init(KEY3_GPIO_PORT, &GPIO_InitStructure);
+		
+		GPIO_InitStructure.Pin = KEY4_PIN; 
+		HAL_GPIO_Init(KEY4_GPIO_PORT, &GPIO_InitStructure);
+		
+		GPIO_InitStructure.Pin = KEY5_PIN; 
+		HAL_GPIO_Init(KEY5_GPIO_PORT, &GPIO_InitStructure);
 }
 
 
