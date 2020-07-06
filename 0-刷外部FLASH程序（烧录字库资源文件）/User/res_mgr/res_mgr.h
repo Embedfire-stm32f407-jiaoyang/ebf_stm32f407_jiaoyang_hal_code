@@ -13,7 +13,7 @@ extern "C"{
 #define SD_ROOT       "0:"
 #define FLASH_ROOT    "1:"
 
-/* 资源在SD卡中的路径 */
+/* 资源在SD卡中的路径(盘符路径，根据程序挂载设备的节点决定) */
 #define RESOURCE_DIR         "0:/"
 /* 资源烧录到的FLASH基地址（目录地址） */
 #define RESOURCE_BASE_ADDR    (4096)

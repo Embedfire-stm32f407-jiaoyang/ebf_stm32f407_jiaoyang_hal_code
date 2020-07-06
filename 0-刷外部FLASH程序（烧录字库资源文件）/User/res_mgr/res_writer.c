@@ -15,7 +15,7 @@
 
 /*flash及sd卡的文件系统句柄*/
 FATFS flash_fs;
-FATFS sd_fs;													/* Work area (file system object) for logical drives */
+FATFS sd_fs[2];													/* Work area (file system object) for logical drives */
 
 //SD卡源数据路径！！
 char src_dir[512]= RESOURCE_DIR;
