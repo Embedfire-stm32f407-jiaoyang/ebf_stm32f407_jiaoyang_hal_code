@@ -49,7 +49,7 @@ uint8_t state = 0;
 /* 如果你的U盘有多个分区，文件系统默认挂载的分区没有字库文件，请定义这两个宏(#define Other_Part)(#define Cheak_file) */
 /* 通过挂载不同的盘符(如main函数Other_Part中挂载的"1:")，找到字库文件，才将宏注释掉，并修改正确的盘符进行烧录 */
 /* 注意要同步修改RES_MGR.h中的RESOURCE_DIR盘符，才能扫描修改后的盘符路径下的文件 */
-#ifdef Other_Part
+#if 1
 PARTITION VolToPart[]=
 {
 	{0,1},/* "0:" */
