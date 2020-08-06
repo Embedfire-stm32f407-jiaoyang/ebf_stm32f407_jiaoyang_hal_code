@@ -24,7 +24,7 @@
   #define NULL        0
 #endif
 
-#define UPDATE_CONFIG    0    // 1 ：更新配置    0 ：不更新配置
+#define UPDATE_CONFIG    1    // 1 ：更新配置    0 ：不更新配置
 
 /*flags的可取值，注释掉的在本工程没有用到*/
 //#define I2C_M_TEN		0x0010	/* 表示这是个10位地址 */
@@ -55,7 +55,8 @@ typedef enum
 {
 	GT9157=0,
 	GT911=1,
-    GT5688=2,
+	GT5688=2,
+	GT917S=3,
 }TOUCH_IC;
 
 
@@ -82,7 +83,7 @@ typedef enum
 #define SWITCH_ON             1
 
 //******************** For GT9XXF Start **********************//
-#define GTP_REG_BAK_REF                 0x99EC
+#define GTP_REG_BAK_REF                 0x99D0
 #define GTP_REG_MAIN_CLK                0x8020
 #define GTP_REG_CHIP_TYPE               0x8000
 #define GTP_REG_HAVE_KEY                0x8057

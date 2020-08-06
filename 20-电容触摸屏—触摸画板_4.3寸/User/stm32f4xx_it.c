@@ -150,7 +150,10 @@ void PendSV_Handler(void)
   * @retval None
   */
 void SysTick_Handler(void)
-{}
+{
+  HAL_IncTick();
+  HAL_SYSTICK_IRQHandler();
+}
 
 /******************************************************************************/
 /*                 STM32F4xx Peripherals Interrupt Handlers                   */

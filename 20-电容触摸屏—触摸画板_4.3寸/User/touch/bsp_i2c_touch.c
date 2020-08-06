@@ -146,10 +146,10 @@ void I2C_ResetChip(void)
   HAL_GPIO_Init(GTP_INT_GPIO_PORT, &GPIO_InitStructure);	
   /*复位为低电平，为初始化做准备*/
   digitalLow (GTP_RST_GPIO_PORT,GTP_RST_GPIO_PIN);
-  Delay(0x0FFFFF);
+	HAL_Delay(10);//满足时序要求使用从设备地址0XBA,INT输出低,RST输出低,保持INT状态,拉高RST
   /*拉高一段时间，进行初始化*/
   digitalHigh (GTP_RST_GPIO_PORT,GTP_RST_GPIO_PIN);
-  Delay(0x0FFFFF);
+	HAL_Delay(100);
   /*选择要控制的GPIO引脚*/															   
   GPIO_InitStructure.Pin =GTP_INT_GPIO_PIN;	
   /*设置引脚的输出类型为输入*/

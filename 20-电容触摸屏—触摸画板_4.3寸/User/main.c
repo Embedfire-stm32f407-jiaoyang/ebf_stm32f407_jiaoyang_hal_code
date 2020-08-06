@@ -38,6 +38,7 @@ void Printf_Charater(void)   ;
   */
 int main ( void )
 {
+	HAL_Init();
   SystemClock_Config();
   LED_GPIO_Config();
 	NT35510_Init ();
